@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/Header'
-import './css/App.css';
-import 'semantic-ui-react';
+import './assets/sass/App.sass';
 
 class App extends Component {
   render() {
