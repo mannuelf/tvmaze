@@ -1,18 +1,14 @@
 import React from 'react'
-import logo from '../assets/img/logo.svg';
 
 class Header extends React.Component {
   render() {
     return (
-      <header className="ui inverted vertical center aligned segment">
-          <img src={logo} className="App-logo" alt="TVMaze" />
+      <header className="App-header">
           <a
             className="App-link"
             href="https://reactjs.org"
             target="_blank"
-            rel="noopener noreferrer">
-          TVMaze
-          </a>
+            rel="noopener noreferrer">Maze</a>
       </header>
     )
   }
