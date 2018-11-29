@@ -2063,3 +2063,4 @@ const episodes = [{
     }
   }
 ]
+export default episodes;

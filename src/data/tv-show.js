@@ -1,7 +1,6 @@
-// dummy data
-const showId = 6771;
-
-const powerPuffGirls = {
+// default data
+// const showId = 6771;
+const tv_show = {
   "id": 6771,
   "url": "http://www.tvmaze.com/shows/6771/the-powerpuff-girls",
   "name": "The Powerpuff Girls",
@@ -59,3 +58,4 @@ const powerPuffGirls = {
     }
   }
 }
+export default tv_show;

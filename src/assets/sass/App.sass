@@ -1,13 +1,12 @@
 // Import Sass entry file containing all sass imports
 @import './index.sass'
 
-.App
-  text-align: center
-  background-color: lighten($black, 9%)
+// Set some base styles for app shell
+body
+  background-color: lighten($black, 95%)
+  font-family: $primary-font
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
 
-@keyframes App-logo-spin
-  from
-    transform: rotate(0deg)
-
-  to
-    transform: rotate(360deg)
+figure.ui-cover-img
+  margin: 0

@@ -1,14 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 class Header extends React.Component {
   render() {
     return (
-      <header className="App-header">
-          <a
+      <header className="App-header ui inverted vertical center aligned segment">
+          <div className="ui container">
+          <Link
             className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer">Maze</a>
+            to="/">Maze</Link>
+          </div>
       </header>
     )
   }
