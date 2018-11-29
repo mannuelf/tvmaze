@@ -1,7 +1,4 @@
 import React from 'react';
-import EpisodeList from './EpisodeList';
-import CoverImage from './CoverImage';
-import EpisodeDetails from './EpisodeDetails';
 import { removeHTMLTags } from '../helpers'
 
 class TvShow extends React.Component {

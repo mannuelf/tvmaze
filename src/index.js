@@ -12,7 +12,6 @@ import rootReducer from './reducers';
 
 // declare store
 const store = createStore(rootReducer);
-console.log('store1', store);
 store.subscribe(() => console.log('store2', store.getState()));
 
 ReactDOM.render(

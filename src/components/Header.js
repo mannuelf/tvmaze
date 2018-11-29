@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import SearchTvShows from './SearchTVShows';
 
 class Header extends React.Component {
   render() {
@@ -10,6 +11,8 @@ class Header extends React.Component {
             className="App-link"
             to="/">Maze</Link>
           </div>
+
+          <SearchTvShows />
       </header>
     )
   }
