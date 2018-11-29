@@ -1,8 +1,8 @@
-export const GET_TV_SHOW = 'GET_TV_SHOW';
+export const SET_TV_SHOW = 'SET_TV_SHOW';
 
-export function getTvShow(tv_show) {
+export function setTvShow(tv_show) {
   return {
-    type: 'GET_TV_SHOW',
+    type: 'SET_TV_SHOW',
     tv_show
   }
 }
