@@ -6,26 +6,29 @@ import { removeHTMLTags } from '../helpers';
 import EpisodesList from './EpisodesList';
 import axios from 'axios';
 
-class TvShow extends Component {
+class EpisodeDetail extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       loading: true,
       tv_show: '',
-      episodes: ''
+      episodes: '',
+      episode: ''
     }
   }
 
-  getDefaultShowState() {
-    let query = 'the-powerpuff-girls';
-    const url = `http://api.tvmaze.com/singlesearch/shows?q=${query}`;
+  getDefaultEpisodeState() {
+    let query = 6771;
+    let season = 1;
+    let episode = 1;
+    const url = `http://api.tvmaze.com/shows/${query}/episodebynumber?season=${season}&number=${episode}`;
 
     axios.get(url)
       .then((response) => {
         this.setState({
           loading: false,
-          tv_show: response.data
+          episode: response.data
         });
       })
       .catch((error) => {
@@ -34,11 +37,11 @@ class TvShow extends Component {
   }
 
   componentDidMount() {
-    this.getDefaultShowState();
+    this.getDefaultEpisodeState();
   }
 
   render() {
-    let { loading, tv_show, episodes } = this.state;
+    let { loading, tv_show, episodes, episode } = this.state;
     if( ! loading) {
       return (
         <div>
@@ -47,27 +50,21 @@ class TvShow extends Component {
             <aside className="six wide column">
               <figure className="ui-cover-img">
                 <img
-                  src={tv_show.image.original}
-                  alt={tv_show.name}
+                  src={episode.image.original}
+                  alt={episode.name}
                   />
               </figure>
             </aside>
 
             <article className="ten wide column ui-episode-detail">
               <hgroup>
-                <h1 className="ui-episode-detail__heading--extra-large">{tv_show.name}</h1>
+                <h1 className="ui-episode-detail__heading--extra-large">{episode.name}</h1>
               </hgroup>
 
               <p className="ui-episode-detail__paragraph--large">
-                {removeHTMLTags(tv_show.summary)}
+                {removeHTMLTags(episode.summary)}
               </p>
 
-              <div className="row">
-                <hgroup>
-                  <h2 className="ui-episode-detail__heading--large">Episodes</h2>
-                  <EpisodesList episodes={episodes} />
-                </hgroup>
-              </div>
             </article>
 
           </div>
@@ -85,4 +82,4 @@ function mapStateToProps(state) {
   return state;
 }
 
-export default connect(mapStateToProps, null)(TvShow);
+export default connect(mapStateToProps, null)(EpisodeDetail);

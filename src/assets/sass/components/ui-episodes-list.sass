@@ -1,0 +1,31 @@
+.ui-episodes-list
+  height: 360px
+  overflow: scroll
+
+  &::-webkit-scrollbar
+    width: $spacing-normal
+
+  &::-webkit-scrollbar-track
+    -webkit-box-shadow: $brand-blue
+
+  &::-webkit-scrollbar-thumb
+    background-color: $brand-orange
+    outline: 1px solid $brand-orange
+    cursor: pointer
+    min-height: 100px
+
+  &__item
+    border-bottom: 1px dashed lighten($brand-black, 95%)
+    padding: $spacing-normal 0
+
+  &__header
+    a
+      color: $brand-orange
+      font-size: $font-size-large
+      &:hover
+        color: lighten($brand-orange, 50%)
+
+  &__paragraph
+    font-size: $font-size-medium
+    padding-bottom: $spacing-small
+

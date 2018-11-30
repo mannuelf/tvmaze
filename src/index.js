@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import App from './components/App';
 import NotFound from './components/NotFound';
 import TvShow from './components/TvShow';
+import EpisodeDetail from './components/EpisodeDetail';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -20,6 +21,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/" component={App} />
         <Route path="tv-show" component={TvShow} />
+        <Route path="tv-show/:d" component={EpisodeDetail} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
