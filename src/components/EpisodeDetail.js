@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import Header from '../components/Header';
 import Loading from './Loading';
 import { removeHTMLTags } from '../helpers';
 import axios from 'axios';
@@ -6,11 +7,10 @@ import axios from 'axios';
 class EpisodeDetail extends Component {
   constructor(props) {
     super(props);
-    console.log('EPISODE_DETAIL', props === "({})");
 
     this.state = {
       loading: true,
-      episode_id: props === "({})" ? 657308 : this.props.match.params.id
+      episode_id: this.props.match.params.id
     }
   }
 
@@ -33,10 +33,11 @@ class EpisodeDetail extends Component {
   }
 
   render() {
-    let { loading, tv_show, episodes, episode } = this.state;
+    let { loading, episode } = this.state;
     if( ! loading) {
       return (
-        <div>
+        <Fragment>
+          <Header />
           <div className="[ ui grid stackable ]">
 
             <aside className="six wide column">
@@ -59,7 +60,7 @@ class EpisodeDetail extends Component {
             </article>
 
           </div>
-        </div>
+        </Fragment>
       )
     } else {
       return (

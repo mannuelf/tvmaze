@@ -2,8 +2,6 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom'
 import Loading from './Loading';
 import { removeHTMLTags } from '../helpers';
-import { bindActionCreators } from 'redux';
-
 import axios from 'axios';
 
 class EpisodeList extends Component {

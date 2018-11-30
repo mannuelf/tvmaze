@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { setTvShow } from '../actions';
 import Loading from './Loading';
 import { removeHTMLTags } from '../helpers';
 import EpisodesList from './EpisodesList';

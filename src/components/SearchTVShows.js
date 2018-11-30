@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { hyphenateQueryForApiCall } from '../helpers'
-import { Link } from 'react-router-dom';
-import { removeHTMLTags } from '../helpers'
 
 import { setTvShow } from '../actions';
 import defaultTvShowData from '../data/tv-show';
