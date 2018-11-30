@@ -20,8 +20,8 @@ ReactDOM.render(
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={App} />
-        <Route path="tv-show" component={TvShow} />
-        <Route path="tv-show/:d" component={EpisodeDetail} />
+        <Route path="/tv-show" component={TvShow} />
+        <Route path="/tv-show/:d" component={EpisodeDetail} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
