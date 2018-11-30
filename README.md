@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## TVMaze API
-I saved the endpoint we will be using in a collection in Postam, please grab them here:
+I saved the endpoints used in a collection in Postman, please grab them here:
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/5bbc18e734ccf9e14b0f)
 
