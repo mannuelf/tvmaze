@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { setTvShow } from '../actions';
 import Loading from './Loading';
 import { removeHTMLTags } from '../helpers';
+import EpisodesList from './EpisodesList';
 import axios from 'axios';
 
 class TvShow extends Component {
@@ -32,34 +33,13 @@ class TvShow extends Component {
       });
   }
 
-  getDefaultEpisodeState() {
-    let query = 6771;
-    const url = `http://api.tvmaze.com/shows/${query}/episodes`;
-
-    axios.get(url)
-      .then((response) => {
-        this.setState({
-          loading: false,
-          episodes: response.data
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-
   componentDidMount() {
     this.getDefaultShowState();
-    this.getDefaultEpisodeState();
   }
 
   render() {
     let { loading, tv_show, episodes } = this.state;
-    if(loading) {
-      return (
-        <Loading />
-      )
-    } else {
+    if( ! loading) {
       return (
         <div>
           <div className="ui grid stackable">
@@ -73,32 +53,29 @@ class TvShow extends Component {
               </figure>
             </aside>
 
-            <article className="ten wide column">
-
+            <article className="ten wide column ui-episode-detail">
               <hgroup>
-                <h1>{tv_show.name}</h1>
+                <h1 className="ui-episode-detail__heading--extra-large">{tv_show.name}</h1>
               </hgroup>
-              <p>{removeHTMLTags(tv_show.summary)}</p>
+
+              <p className="ui-episode-detail__paragraph--medium">
+                {removeHTMLTags(tv_show.summary)}
+              </p>
 
               <div className="row">
                 <hgroup>
-                  <h1>Episodes</h1>
-                  {/* {
-                    this.props.episodes.map((episode, index) => {
-                      return (
-                        <div key={index}>
-                          <p>{episode.summary}</p>
-                        </div>
-                      );
-                    })
-                  } */}
+                  <h2 className="ui-episode-detail__heading--large">Episodes</h2>
+                  <EpisodesList episodes={episodes} />
                 </hgroup>
               </div>
-
             </article>
 
           </div>
         </div>
+      )
+    } else {
+      return (
+        <Loading />
       )
     }
   }
