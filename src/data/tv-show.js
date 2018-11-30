@@ -58,4 +58,3 @@ const tv_show = {
     }
   }
 }
-export default tv_show;

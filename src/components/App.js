@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import SearchTvShows from './SearchTVShows';
-import { Link } from 'react-router-dom';
 import Header from './Header';
+import TvShow from './TvShow';
 import '../assets/sass/App.sass';
+
 
 class App extends Component {
     render() {
@@ -10,7 +10,7 @@ class App extends Component {
         <div className="App">
           <Header />
           <section className="ui container">
-
+          <TvShow />
           </section>
         </div>
       );

@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 import { SET_TV_SHOW } from '../actions';
 
+import defaultTvShow from '../data/tv-show';
+
 // a reducer take two params, a state variable and an action,
 // we will assign empty state by default to the state variable.
 
