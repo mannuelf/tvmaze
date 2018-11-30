@@ -42,7 +42,7 @@ class TvShow extends Component {
     if( ! loading) {
       return (
         <Fragment>
-          <div className="ui grid stackable">
+          <div className="[ ui grid stackable ]">
 
             <aside className="six wide column">
               <figure className="ui-cover-img">
@@ -58,7 +58,7 @@ class TvShow extends Component {
               <h1 className="ui-episode-detail__heading--extra-large">{tv_show.name}</h1>
 
               <p className="ui-episode-detail__paragraph--large">
-                {removeHTMLTags(tv_show.summary)}MMM
+                {removeHTMLTags(tv_show.summary)}
               </p>
 
               <div className="row">

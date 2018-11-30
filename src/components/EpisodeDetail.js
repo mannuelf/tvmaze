@@ -1,25 +1,21 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { setTvShow } from '../actions';
 import Loading from './Loading';
 import { removeHTMLTags } from '../helpers';
-import EpisodesList from './EpisodesList';
 import axios from 'axios';
 
 class EpisodeDetail extends Component {
   constructor(props) {
     super(props);
+    console.log('EPISODE_DETAIL', props === "({})");
 
     this.state = {
       loading: true,
-      episode_id: this.props.params.id
+      episode_id: props === "({})" ? 657308 : this.props.match.params.id
     }
-    console.log('EPISODE_DETAIL', this.state);
   }
 
   getEpisode() {
     let url = `http://api.tvmaze.com/episodes/${this.state.episode_id}`;
-
     axios.get(url)
       .then((response) => {
         this.setState({
@@ -41,7 +37,7 @@ class EpisodeDetail extends Component {
     if( ! loading) {
       return (
         <div>
-          <div className="ui grid stackable">
+          <div className="[ ui grid stackable ]">
 
             <aside className="six wide column">
               <figure className="ui-cover-img">
@@ -52,7 +48,7 @@ class EpisodeDetail extends Component {
               </figure>
             </aside>
 
-            <article className="ten wide column ui-episode-detail">
+            <article className="[ ten wide column ] [ ui-episode-detail ]">
               <h1 className="ui-episode-detail__heading--extra-large">
                 {episode.name}
               </h1>
