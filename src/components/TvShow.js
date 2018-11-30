@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { setTvShow } from '../actions';
 import Loading from './Loading';
@@ -41,7 +41,7 @@ class TvShow extends Component {
     let { loading, tv_show, episodes } = this.state;
     if( ! loading) {
       return (
-        <div>
+        <Fragment>
           <div className="ui grid stackable">
 
             <aside className="six wide column">
@@ -54,24 +54,21 @@ class TvShow extends Component {
             </aside>
 
             <article className="ten wide column ui-episode-detail">
-              <hgroup>
-                <h1 className="ui-episode-detail__heading--extra-large">{tv_show.name}</h1>
-              </hgroup>
+
+              <h1 className="ui-episode-detail__heading--extra-large">{tv_show.name}</h1>
 
               <p className="ui-episode-detail__paragraph--large">
                 {removeHTMLTags(tv_show.summary)}
               </p>
 
               <div className="row">
-                <hgroup>
-                  <h2 className="ui-episode-detail__heading--large">Episodes</h2>
-                  <EpisodesList episodes={episodes} />
-                </hgroup>
+                <h2 className="ui-episode-detail__heading--large">Episodes</h2>
+                <EpisodesList episodes={episodes} />
               </div>
             </article>
 
           </div>
-        </div>
+        </Fragment>
       )
     } else {
       return (
