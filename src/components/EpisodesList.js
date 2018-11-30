@@ -47,7 +47,9 @@ class EpisodeList extends Component {
               episodes.map((episode, index) => (
                 <div key={ index } className="ui-episodes-list__item">
                   <h3 className="ui-episodes-list__header">
-                    <Link to="/tv-show/:d">{ episode.name }</Link>
+                    <Link to={`/tv-show/${episode.id}`}>
+                      {episode.name}
+                    </Link>
                   </h3>
                   <p className="ui-episodes-list__paragraph">
                     { removeHTMLTags(episode.summary) }
@@ -60,9 +62,7 @@ class EpisodeList extends Component {
       )
     } else {
       return (
-        <p>
-          <Loading />
-        </p>
+        <Loading />
       )
     }
   }

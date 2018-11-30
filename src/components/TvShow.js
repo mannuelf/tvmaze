@@ -58,7 +58,7 @@ class TvShow extends Component {
               <h1 className="ui-episode-detail__heading--extra-large">{tv_show.name}</h1>
 
               <p className="ui-episode-detail__paragraph--large">
-                {removeHTMLTags(tv_show.summary)}
+                {removeHTMLTags(tv_show.summary)}MMM
               </p>
 
               <div className="row">

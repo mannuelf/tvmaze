@@ -12,17 +12,13 @@ class EpisodeDetail extends Component {
 
     this.state = {
       loading: true,
-      tv_show: '',
-      episodes: '',
-      episode: ''
+      episode_id: this.props.params.id
     }
+    console.log('EPISODE_DETAIL', this.state);
   }
 
-  getDefaultEpisodeState() {
-    let query = 6771;
-    let season = 1;
-    let episode = 1;
-    const url = `http://api.tvmaze.com/shows/${query}/episodebynumber?season=${season}&number=${episode}`;
+  getEpisode() {
+    let url = `http://api.tvmaze.com/episodes/${this.state.episode_id}`;
 
     axios.get(url)
       .then((response) => {
@@ -37,7 +33,7 @@ class EpisodeDetail extends Component {
   }
 
   componentDidMount() {
-    this.getDefaultEpisodeState();
+    this.getEpisode();
   }
 
   render() {
@@ -57,14 +53,13 @@ class EpisodeDetail extends Component {
             </aside>
 
             <article className="ten wide column ui-episode-detail">
-              <hgroup>
-                <h1 className="ui-episode-detail__heading--extra-large">{episode.name}</h1>
-              </hgroup>
+              <h1 className="ui-episode-detail__heading--extra-large">
+                {episode.name}
+              </h1>
 
               <p className="ui-episode-detail__paragraph--large">
                 {removeHTMLTags(episode.summary)}
               </p>
-
             </article>
 
           </div>
@@ -78,8 +73,4 @@ class EpisodeDetail extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return state;
-}
-
-export default connect(mapStateToProps, null)(EpisodeDetail);
+export default EpisodeDetail;
