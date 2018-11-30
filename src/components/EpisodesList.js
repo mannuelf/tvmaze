@@ -36,7 +36,6 @@ class EpisodeList extends Component {
 
   render() {
     let { loading, episodes } = this.state;
-    console.log('episodes', episodes);
     if ( ! loading) {
       return (
         <Fragment>

@@ -9,6 +9,5 @@ export function removeHTMLTags(str) {
 
 export function hyphenateQueryForApiCall(str) {
   str = str.replace(/\s+/g, '-').toLowerCase();
-  console.log(str);
   return str;
 }

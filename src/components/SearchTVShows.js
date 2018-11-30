@@ -26,7 +26,6 @@ class SearchTvShows extends Component {
       .then((response) => {
         let data = response.data;
         this.props.setTvShow(data);
-        console.log('axios', this.props);
         this.setState({tv_show: data});
       })
       .catch((error) => {
